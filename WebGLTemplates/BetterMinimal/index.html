@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -10,10 +11,11 @@
 		var scaleToFit;
 		try {
 			scaleToFit = !!JSON.parse("%UNITY_CUSTOM_SCALE_TO_FIT%");
-		} catch(e) {
+		} catch (e) {
 			scaleToFit = true;
 		}
-		window.onresize = function() {
+
+		function onResize() {
 			var canvas = gameInstance.Module.canvas;
 			var container = gameInstance.container;
 			var w;
@@ -39,6 +41,7 @@
 			container.style.top = Math.floor((window.innerHeight - h) / 2) + "px";
 			container.style.left = Math.floor((window.innerWidth - w) / 2) + "px";
 		}
+		window.addEventListener('resize', onResize);
 	</script>
 	<style>
 		html,
@@ -53,7 +56,7 @@
 		}
 
 		div#gameContainer {
-			background: transparent!important;
+			background: transparent !important;
 			position: absolute;
 		}
 
@@ -72,7 +75,8 @@
 	</style>
 </head>
 
-<body onload="window.onresize();">
+<body onload="onResize();">
 	<div id="gameContainer"></div>
 </body>
+
 </html>
