@@ -22,7 +22,7 @@
 		}
 
 		div#gameContainer canvas {
-			position: absolute;
+			position: absolute;{{{ OPTIMIZE_FOR_PIXEL_ART && `
 			image-rendering: optimizeSpeed;
 			image-rendering: -webkit-crisp-edges;
 			image-rendering: -moz-crisp-edges;
@@ -31,7 +31,7 @@
 			image-rendering: -webkit-optimize-contrast;
 			image-rendering: optimize-contrast;
 			image-rendering: pixelated;
-			-ms-interpolation-mode: nearest-neighbor;
+			-ms-interpolation-mode: nearest-neighbor;` }}}
 		}
 	</style>
 </head>
