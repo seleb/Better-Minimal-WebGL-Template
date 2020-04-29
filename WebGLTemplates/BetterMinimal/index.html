@@ -62,6 +62,9 @@
 
 		div#gameContainer canvas {
 			position: absolute;
+		}
+
+		div#gameContainer[data-pixelated='true'] canvas {
 			image-rendering: optimizeSpeed;
 			image-rendering: -webkit-crisp-edges;
 			image-rendering: -moz-crisp-edges;
@@ -76,7 +79,7 @@
 </head>
 
 <body onload="onResize();">
-	<div id="gameContainer"></div>
+	<div id="gameContainer" data-pixelated="%UNITY_CUSTOM_OPTIMIZE_FOR_PIXEL_ART%"></div>
 </body>
 
 </html>
